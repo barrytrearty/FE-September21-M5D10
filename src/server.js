@@ -12,7 +12,6 @@ import {
 } from "./errorhandlers.js";
 
 const server = express();
-
 const port = process.env.PORT || 3005;
 
 const publicFilePath = join(process.cwd(), "public");
@@ -29,9 +28,9 @@ const corsOptions = {
     }
   },
 };
-
-server.use(express.static(publicFilePath));
 server.use(cors(corsOptions));
+server.use(express.static(publicFilePath));
+
 server.use(express.json());
 
 server.use("/media", mediaRouter);
