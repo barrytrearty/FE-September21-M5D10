@@ -13,7 +13,7 @@ import {
 
 const server = express();
 
-const port = 3005;
+const port = process.env.PORT || 3005;
 
 const publicFilePath = join(process.cwd(), "public");
 
